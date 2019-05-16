@@ -11,31 +11,38 @@
 
 // Principle 1
 
+//Windo/Gobal Object Binding
+
 // code example for Window Binding
 
-function sayName(name) {
+function sayName() {
     console.log(this);
-    return name;
+    
   }
-  sayName("D'Artagnan");
+  sayName();
 
 // Principle 2 
 
+// Implicit Binding 
+
+// THIS key word 
 // code example for Implicit Binding
 const myObj = {
     greeting: 'Hello',
-    sayHello: function(name) {
+    sayHello: function(name) { ///<--- this is called a method
       console.log(`${this.greeting} my name is ${name}`);
       console.log(this);
     }
   };
   myObj.sayHello('Ryan');
 
+
+
 // Principle 3
 
 // code example for New Binding
 
-function CordialPerson(greeter) {
+function CordialPerson(greeter) { /// a constructor function (Starts with a capital letter)
     this.greeting = 'Hello ';
     this.greeter = greeter;
     this.speak = function() {
@@ -51,7 +58,9 @@ function CordialPerson(greeter) {
   newman.speak();
 
 // Principle 4
+
 //Explicit Binding
+
 //Explicit binding of this occurs when .call(), .apply(), or .bind() are used on a function.
 
 // code example for Explicit Binding
